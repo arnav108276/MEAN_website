@@ -48,7 +48,8 @@ app.post('/users', async (req, res) => {
     console.error('Error saving user:', err.message);
     res.redirect('/');
   }
-});
+}
+        );
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   try {
