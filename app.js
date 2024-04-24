@@ -3,17 +3,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path'); // Add path module
-
 // Create Express app
 const app = express();
-
 // Set up middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
-
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
-
 // Connect to MongoDB Atlas
 mongoose.connect('mongodb+srv://arnav9368543702:passkey=00@cluster0.erp1gx4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
@@ -23,20 +19,16 @@ mongoose.connect('mongodb+srv://arnav9368543702:passkey=00@cluster0.erp1gx4.mong
 }).catch((err) => {
   console.error('Error connecting to MongoDB Atlas:', err.message);
 });
-
 // Define Mongoose schema and model
 const userSchema = new mongoose.Schema({
   email: String,
   password: String
 });
-
 const User = mongoose.model('User', userSchema);
-
 // Routes
 app.get('/', (req, res) => {
   res.render('index');
 });
-
 app.post('/users', async (req, res) => {
   const { email, password } = req.body;
   try {
