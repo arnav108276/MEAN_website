@@ -49,7 +49,6 @@ app.post('/users', async (req, res) => {
     res.redirect('/');
   }
 });
-
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   try {
