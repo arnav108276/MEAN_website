@@ -1,11 +1,9 @@
-// Import dependencies
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path'); // Add path module
 // Create Express app
 const app = express();
-// Set up middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 // Serve static files from the 'public' directory
