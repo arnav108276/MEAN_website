@@ -1,33 +1,20 @@
-name: Node.js Package
-
+name: Add node package to GitHub repository
 on:
-  release:
-    types: [created]
+  push:
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npm test
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 16
-          registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install mongoose express mongodb body-parser
+      - name: Add node package
+        run: npm install npm --save
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -m "Added node package npm"
+      - name: Push changes
+        run: git push origin main
