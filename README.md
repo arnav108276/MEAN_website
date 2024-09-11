@@ -1,5 +1,6 @@
 # WebTech-Assignment2
-This is a basic webpage maden using html, css , express , mongodb , node.js and javascript for a bussiness named Industrial Edition
+### Access website at https://webtech-assignment2-ytkw.onrender.com
+## This is a basic webpage maden using html, css , express , mongodb , node.js and javascript for a bussiness named Industrial Edition
 ![image](https://github.com/arnav108276/WebTech-Assignment2/assets/143831459/3a6ac43e-b3fd-4449-9ead-a0d132b17d4a)
 ![image](https://github.com/arnav108276/WebTech-Assignment2/assets/143831459/83c193f4-2af6-4b2a-babe-4e9c1888a8fd)
 ![image](https://github.com/arnav108276/WebTech-Assignment2/assets/143831459/a24c3049-1c9c-4efe-ad27-73a4381bec79)
