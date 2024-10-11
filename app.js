@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const path = require('path'); // Add path module
+const path = require('path');  // Add path module
 // Create Express ap
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
